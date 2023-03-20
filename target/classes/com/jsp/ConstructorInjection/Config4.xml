@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"   
+     
+ 
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ https://www.springframework.org/schema/context
+ https://www.springframework.org/schema/beans/spring-beans.context">
+<!-- using value tag 
+
+
+ <bean class="com.jsp.ConstructorInjection.Emp" name="emp1">
+ 
+ <constructor-arg><value>Dinga </value></constructor-arg>
+ 
+ <constructor-arg><value>420</value></constructor-arg>
+ 
+ <constructor-arg><value>5000</value></constructor-arg>
+ 
+</bean>
+ -->
+ <!-- 
+ <bean class="com.jsp.ConstructorInjection.Emp" name="emp1" c:eName="Dinga" c:eId="12" c:eSal="10000"></bean>
+ 
+  -->
+  <bean class="com.jsp.ConstructorInjection.Dept" name="refdept" c:dname="trainer"/>
+ 
+ <bean class="com.jsp.ConstructorInjection.Emp" name="refEmp">
+ 
+ <constructor-arg value="Mr Uday"/>
+ <constructor-arg value="50000"/>
+ <constructor-arg value="50000000"/>
+ <constructor-arg ref="refdept"/>
+ 
+ 
+ </bean>
+ 
+ 
+ 
+ 
+ </beans>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+     xmlns:util="http://www.springframework.org/schema/util"
+ 
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ https://www.springframework.org/schema/context
+ https://www.springframework.org/schema/beans/spring-beans.context
+  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+ 
+ <!-- StandAlone list  -->
+ <util:list list-class="java.util.LinkedList" id="x">
+ <value>BMW</value>
+ <value>Audi</value>
+ <value>Maruti</value>
+ <value>Nano</value>
+ 
+ </util:list>
+ <util:set set-class="java.util.HashSet" id="y">
+ <value>jsp@</value>
+  <value>qsp@</value>
+   <value>rsp@</value>
+ 
+ </util:set>
+ 
+ <util:map map-class="java.util.HashMap " id="z">
+ <entry key="Mohan" value="kumar"/>
+  <entry key="rakesh" value="raj"/>
+   <entry key="prem" value="kumar"/>
+ 
+ </util:map>
+ 
+ <util:properties id="i">
+ <prop key="driver_class_name">com.mysql.jdbc.Driver</prop>
+ <prop key="url">jdbc:mysql:localhost:3306/101</prop>
+ <prop key="username">root</prop>
+ <prop key="password">root</prop>
+ 
+ </util:properties>
+ 
+ 
+ 
+ 
+<bean class="com.jsp.StandAloneCollection.Emp" name="emp1">
+<property name="vehicle" ref="x"></property>
+<property name="email" ref="y"></property>
+<property name="name" ref="z"></property>
+<property name="dbprop" ref="i"></property>
+</bean>
+<bean class="com.jsp.StandAloneCollection.Emp" name="emp2">
+<property name="vehicle" ref="x"></property>
+
+
+</bean>
+ </beans>
